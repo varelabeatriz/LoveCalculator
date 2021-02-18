@@ -1,5 +1,7 @@
 #  💕Love Calculator
 
+![Love Calculator UI](https://i.imgur.com/kSI0F07.png)
+
 ## ❔ About
  - The Love Calculator will tell what are the odds that you and your loved one will end up together! Just type both names and cross your fingers. Good luck, and remeber: the Love Calculator never lies...
 
