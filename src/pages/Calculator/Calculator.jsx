@@ -5,6 +5,11 @@ import hearts from './img/hearts.png'
 const Calculator = () => {
     const [name, setName] = useState('')
     const [secondName, setSecondName] = useState('')
+    const [showResults, setShowResults] = useState(false)
+
+    function operation(){
+        setShowResults(true)
+    }
 
     let result = name.length * secondName.length;
     let loveResult = 0;
@@ -36,7 +41,7 @@ const Calculator = () => {
             <div>
                 <Input
                     placeholder="Your name"
-                    onChange={event => setName(event.target.value)}
+                    onChange={event => {setName(event.target.value); setShowResults(false)}}
                 >
                 </Input>
                 <Hearts
@@ -46,16 +51,29 @@ const Calculator = () => {
                 />
                 <Input
                     placeholder="Your lover's name"
-                    onChange={event => setSecondName(event.target.value)}
+                    onChange={event => {setSecondName(event.target.value); setShowResults(false)}}
                 >
                 </Input>
             </div>
             <ButtonWrapper>
                 <Button
-                    onClick={console.log(name)}
-                >Calculate</Button>
+                    onClick={() => operation()}
+                >
+                    Calculate
+                </Button>
             </ButtonWrapper>
-            <p>{loveResult}%</p>
+
+            {
+                showResults ?
+                    <p>
+                        {loveResult}%
+                    </p>
+                    : null
+            }
+
+
+
+
         </Wrapper>
     )
 }

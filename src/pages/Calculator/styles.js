@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     background-color: #FFFCF9;    
+    height: 100vh;
 `;
 
 export const Title = styled.p`
@@ -10,7 +11,8 @@ export const Title = styled.p`
     color: #444;
     font-family: 'Vidaloka', serif;
     font-size: 72px;
-    margin: 10% 0 -10px 0;
+    margin: 0 0 -10px 0;
+    padding: 10% 0 0 0;
 `;
 
 export const Subtitle = styled.p`
