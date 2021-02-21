@@ -11,28 +11,32 @@ const Calculator = () => {
         setShowResults(true)
     }
 
-    let result = name.length * secondName.length;
-    let loveResult = 0;
+    let loveResult = name.length * secondName.length;
 
-    if (result % 2 == 0) {
-        loveResult = result * 3
-    } else {
-        loveResult = result * 4
-    }
+    let nameChars = name.split("");
+    let secondNameChars = secondName.split("");
+    let chars = nameChars.concat(secondNameChars);
+    console.log(chars);
+    let letter = 0;
+    let numbers = []
 
-    if (loveResult > 100) {
-        loveResult = 100;
-    }
-
-    if (loveResult < 0) {
-        loveResult = 0;
-    }
-
-    if ((name == "Beatriz") || (secondName == "Beatriz")) {
-        if ((name == "Gabriel") || (secondName == "Gabriel")) {
-            loveResult = 100;
+    for(var i = 0; i < chars.length; i++ ){
+        for(var j = 0; j < chars.length; j++){
+            if (chars[i] == chars[j+1]){
+                letter = letter + 1;
+            }
         }
+        numbers.push(letter);
+        letter = 1;
     }
+
+    console.log(numbers);
+
+    // if ((name == "Beatriz") || (secondName == "Beatriz")) {
+    //     if ((name == "Gabriel") || (secondName == "Gabriel")) {
+    //         loveResult = 100;
+    //     }
+    // }
 
     return (
         <Wrapper>
