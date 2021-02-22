@@ -7,7 +7,7 @@ const Calculator = () => {
     const [secondName, setSecondName] = useState('')
     const [showResults, setShowResults] = useState(false)
 
-    function operation(){
+    function operation() {
         setShowResults(true)
     }
 
@@ -16,21 +16,39 @@ const Calculator = () => {
     let nameChars = name.split("");
     let secondNameChars = secondName.split("");
     let chars = nameChars.concat(secondNameChars);
-    console.log(chars);
-    let letter = 0;
+    //console.log(chars);
+    let letter = 1;
     let numbers = []
 
-    for(var i = 0; i < chars.length; i++ ){
-        for(var j = 0; j < chars.length; j++){
-            if (chars[i] == chars[j+1]){
-                letter = letter + 1;
+    for (var i = 0; i < chars.length; i++) {
+        for (var j = 0; j < chars.length; j++) {
+            if (chars[i] == chars[j]) {
+                if (i != j) {
+                    letter = letter + 1;
+                    chars.splice(j, 1);
+                }
+            } else {
+                letter = 1;
             }
         }
+        console.log(letter);
         numbers.push(letter);
         letter = 1;
     }
 
     console.log(numbers);
+
+    // let newNumber;
+    // let newArray = [];
+
+    // for(var k = 0; k < (numbers.length) / 2; k++){
+    //     newNumber = numbers[k] + numbers[numbers.length]
+    //     newArray.push(newNumber);
+    // }
+
+    // console.log(newArray);
+
+
 
     // if ((name == "Beatriz") || (secondName == "Beatriz")) {
     //     if ((name == "Gabriel") || (secondName == "Gabriel")) {
@@ -45,7 +63,7 @@ const Calculator = () => {
             <div>
                 <Input
                     placeholder="Your name"
-                    onChange={event => {setName(event.target.value); setShowResults(false)}}
+                    onChange={event => { setName(event.target.value); setShowResults(false) }}
                 >
                 </Input>
                 <Hearts
@@ -55,7 +73,7 @@ const Calculator = () => {
                 />
                 <Input
                     placeholder="Your lover's name"
-                    onChange={event => {setSecondName(event.target.value); setShowResults(false)}}
+                    onChange={event => { setSecondName(event.target.value); setShowResults(false) }}
                 >
                 </Input>
             </div>
