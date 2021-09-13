@@ -15,8 +15,9 @@ const Calculator = () => {
 
     let nameChars = name.split("");
     let secondNameChars = secondName.split("");
+    console.log(nameChars + " and " + secondNameChars);
     let chars = nameChars.concat(secondNameChars);
-    //console.log(chars);
+    console.log(chars);
     let letter = 1;
     let numbers = []
 
@@ -28,7 +29,7 @@ const Calculator = () => {
                     chars.splice(j, 1);
                 }
             } else {
-                letter = 1;
+               // letter = 1;
             }
         }
         console.log(letter);
